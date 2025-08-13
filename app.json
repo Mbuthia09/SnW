@@ -37,6 +37,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "cf80687b-e4a8-42b6-b308-829150d70848"
+      }
+    },
+    "owner": "mbuth1a.dev"
   }
 }
