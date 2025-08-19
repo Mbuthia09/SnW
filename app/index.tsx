@@ -1,7 +1,9 @@
 // app/index.tsx
+import { MaterialIcons } from "@expo/vector-icons";
 import React from "react";
 import {
   Button,
+  Image,
   ImageBackground,
   SafeAreaView,
   StyleSheet,
@@ -49,7 +51,7 @@ export default function HomeScreen() {
                   keyboardType="web-search"
                 />
                 <TouchableOpacity style={styles.button}>
-                  <Text style={styles.buttonText}>Check Availability</Text>
+                  <Text style={styles.buttonTextt}>Check Availability</Text>
                 </TouchableOpacity>
               </View>
 
@@ -64,10 +66,55 @@ export default function HomeScreen() {
         {/** info+image */}
         <View style={styles.section}>
           <View style={styles.textContainer}>
-            <Text>Some words of flattery here</Text>
+            {/* Rating */}
+            <View style={styles.ratingContainer}>
+              <View style={styles.stars}>
+                {[...Array(5)].map((_, i) => (
+                  <MaterialIcons
+                    key={i}
+                    name="star"
+                    size={20}
+                    color="#FFC107"
+                  />
+                ))}
+              </View>
+              <Text style={styles.ratingText}>
+                Rated 4.9 out of 5 - based on 1790 reviews
+              </Text>
+            </View>
+
+            {/* Title */}
+            <Text style={styles.title}>
+              {"Fast, Reliable, and Affordable Hosting Solutions"}
+            </Text>
+
+            {/* Description */}
+            <Text style={styles.descriptionn}>
+              {
+                "Join our 20,000+ customers who enjoy fast hosting and outstanding\nsupport. Whether you’re new to websites and hosting or a seasoned\nexpert, our support team is ready to help you every step of the\nway."
+              }
+            </Text>
+
+            {/* Buttons */}
+            <View style={styles.buttonContainer}>
+              <TouchableOpacity style={styles.primaryButton}>
+                <Text style={styles.buttonText}>see hosting plans</Text>
+                <MaterialIcons name="arrow-drop-down" size={16} color="#fff" />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.secondaryButton}>
+                <Text style={styles.secondaryButtonText}>
+                  speak to an expert
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
+
           <View style={styles.imageContainer}>
-            <Text>An Image will go here</Text>
+            <Image
+              source={require("../assets/images/happyperson.jpg")}
+              style={styles.image}
+              resizeMode="cover"
+            />
           </View>
         </View>
 
@@ -178,22 +225,108 @@ const styles = StyleSheet.create({
   section: {
     flexDirection: "row",
     justifyContent: "space-between",
-    padding: GAP,
-    marginBottom: GAP,
+    alignItems: "center",
+    padding: 16,
+    marginBottom: 16,
+    borderRadius: 16,
     backgroundColor: "#fff",
-    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
   },
   textContainer: {
     flex: 1,
+    marginRight: 16,
     justifyContent: "center",
+    paddingHorizontal: 0,
+    paddingVertical: 16,
   },
-  imageContainer: {
-    flex: 1,
+  ratingContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 16,
+  },
+  stars: {
+    flexDirection: "row",
+    marginRight: 8,
+  },
+  ratingText: {
+    fontSize: 14,
+    color: "#333",
+    fontWeight: "400",
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#1a1a1a",
+    marginBottom: 16,
+    lineHeight: 32,
+  },
+  descriptionn: {
+    fontSize: 16,
+    color: "#555",
+    marginBottom: 24,
+    lineHeight: 24,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    gap: 12,
+  },
+  primaryButton: {
+    backgroundColor: "#0084ff",
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 8,
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
   },
+  buttonTextt: {
+    color: "#fff",
+    fontSize: 14,
+    fontWeight: "500",
+  },
+  secondaryButton: {
+    borderWidth: 1,
+    borderColor: "#0084ff",
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 8,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  secondaryButtonText: {
+    color: "#0084ff",
+    fontSize: 14,
+    fontWeight: "500",
+  },
+  imageContainer: {
+    flex: 1,
+    width: 250,
+    height: 350,
+    borderRadius: 16,
+    overflow: "hidden",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  image: {
+    width: 250,
+    height: 350,
+    resizeMode: "contain",
+  },
   buttonGroup: {
     flex: 1,
-    justifyContent: "space-around",
+    justifyContent: "center",
+    marginRight: 8,
+    backgroundColor: "#fff",
+    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
 });
