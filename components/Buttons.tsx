@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TextInput } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
-import CustomButton from "../components/Button"; // assuming you created this
+import CustomButton from "../components/Button"; 
 
 export default function HomeScreen() {
   const [domain, setDomain] = React.useState("");
