@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TextInput } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
-import CustomButton from "../components/Button"; 
+import CustomButton from "../components/Buttons";
 
 export default function HomeScreen() {
   const [domain, setDomain] = React.useState("");
@@ -38,26 +38,25 @@ export default function HomeScreen() {
         secondary
       />
     </LinearGradient>
-    );
-  }
-  
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: "center",
-      padding: 20,
-    
-    },
-    title: {
-      fontSize: 26,
-      fontWeight: "bold",
-      marginBottom: 25,
-      textAlign: "center",
-      color: "#000", // black like flag
-      textTransform: "uppercase",
-      letterSpacing: 1.5,
-    },
-    input: {
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    padding: 20,
+  },
+  title: {
+    fontSize: 26,
+    fontWeight: "bold",
+    marginBottom: 25,
+    textAlign: "center",
+    color: "#000", // black like flag
+    textTransform: "uppercase",
+    letterSpacing: 1.5,
+  },
+  input: {
     borderWidth: 0,
     borderRadius: 12,
     padding: 14,
@@ -69,30 +68,28 @@ export default function HomeScreen() {
     shadowRadius: 4,
     elevation: 2,
   },
-    button: {
-      backgroundColor: "#ff0000", // red base
-      paddingVertical: 15,
-      borderRadius: 30, // pill-shaped for modern look
-      marginBottom: 15,
-      shadowColor: "#000",
-      shadowOffset: { width: 0, height: 4 },
-      shadowOpacity: 0.2,
-      shadowRadius: 4,
-      elevation: 3,
-    },
-    secondaryButton: {
-      backgroundColor: "#000", // black for contrast
-      paddingVertical: 15,
-      borderRadius: 30,
-      marginBottom: 15,
-    },
-    buttonText: {
-      color: "#fff",
-      textAlign: "center",
-      fontWeight: "bold",
-      fontSize: 16,
-      letterSpacing: 1,
-    },
-    
-  });
-
+  button: {
+    backgroundColor: "#ff0000", // red base
+    paddingVertical: 15,
+    borderRadius: 30, // pill-shaped for modern look
+    marginBottom: 15,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  secondaryButton: {
+    backgroundColor: "#000", // black for contrast
+    paddingVertical: 15,
+    borderRadius: 30,
+    marginBottom: 15,
+  },
+  buttonText: {
+    color: "#fff",
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 16,
+    letterSpacing: 1,
+  },
+});
